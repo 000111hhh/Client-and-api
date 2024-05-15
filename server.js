@@ -119,13 +119,13 @@ function emailSMTP(email, randcode) {
         secure: true,
 
         auth: {
-            user: '873737197@qq.com',
-            pass: 'latspayxzjhbbfgh'
+            user: 'This is your email',
+            pass: 'this is your email password'
         }
     });
 
     const mailOptions = {
-        from: '873737197@qq.com',
+        from: 'This is your email',
         to: `${email}`,
         subject: '您好，请通过邮箱验证码验证',
         text: `这是你的邮箱验证码${randcode}`
@@ -292,10 +292,10 @@ async function proxysend(req,res){
     res.set('Access-Control-Allow-Methods', 'GET, OPTIONS, POST');
     res.set('Access-Control-Allow-Headers', 'Content-Type');
 
-    const targetUrl = "https://api.binjie.fun/api/generateStream";
+    const targetUrl = "this is api";
     const headers = {
-        "Content-Type": "application/json",
-        "origin": "https://chat18.aichatos.xyz"};
+        "Content-Type": "",
+        "origin": ""};
     
     const jsondata = req.body;
     console.log(jsondata)
