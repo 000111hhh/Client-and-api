@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="utf-8">
+    <title>我制作的第一个网页</title>
+    <meta name="description" content="我制作的第一个网页">
+    <meta name="author" content="Lin">
+    <link rel="stylesheet" type="text/css" href="style1.css">
+    <script src="https://cdn.staticfile.org/vue/3.0.5/vue.global.js"></script>
+</head>
+<body>
+  <div id="app">
+    <div v-if="showConfirm">
+     <div id="callme">
+      <h1>我的联系方式</h1>
+      <h2>简介</h2>
+      <p>这是我的个人网页，你可以通过以下方式来联系我</p>
+      <p>这是我的个人QQ号:873737197</p>
+      <p>个人微博<a target="_blank" href="https://weibo.com/u/7719134479">@微博</a></p>
+      <p>你也可以通过微信二维码联系我</p>
+      <br>
+      <br>
+      <img src="http://localhost:3000/images/01.jpg" alt="我的微信" width="800" height="650">
+     </div> 
+    </div>
+  </div>
+    <script>
+      const information = Vue.createApp({
+        data(){
+          return{
+            showConfirm:false
+          };
+        },
+        mounted() {
+          if(confirm("前往作者界面？")){
+            this.showConfirm = true;
+          }else{
+            window.location.href = "chatweb.html"
+          }
+        }
+      });
+      
+      information.mount('#callme')
+
+    //    if (confirm("是否继续访问？")) {
+    //   document.write('<div class="inform">');
+    //   document.write('<h1>我的联系方式</h1>');
+    //   document.write('<h2>简介</h2>');
+    //   document.write('<p>这是我的个人网页，你可以通过以下方式来联系我</p>');
+    //   document.write('<p>这是我的个人QQ号:873737197</p>');
+    //   document.write('<p>个人微博:<a target="_blank" href="https://weibo.com/u/7719134479">@微博</a></p>');
+    //   document.write('<p>你也可以通过以下微信二维码来联系我</p>');
+    //   document.write('<p></p>');
+    //   document.write('<p></p>');
+    //   document.write('<img src="http://localhost:3000/images/01.jpg" alt="我的微信" width="800" height="650">');
+    //   document.write('</div>');
+    // } else {
+    //   document.write('<div class="refuse">');
+    //   document.write('<h1>请退出</h1>');
+    //   document.write('</div>');
+    // }
+
+    </script>
+</body>
+</html>

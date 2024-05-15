@@ -1,0 +1,16 @@
+const connection = mysql.createConnection({
+    host:'localhost',
+    user:'root',
+    password:'1234',
+    database:'users'
+    });
+    
+connection.connect((err) => {
+    if (err){
+        console.error('数据库出现错误',err);
+        return;
+    }
+    console.log('连接成功');
+});
+
+module.exports = connection;
